@@ -276,11 +276,6 @@ h3 {
   padding: 20px;
 }
 
-.more-card {
-  border-style: dashed;
-  background: #f8fbf9;
-}
-
 .project-group {
   display: grid;
   grid-template-columns: minmax(220px, 0.38fr) minmax(0, 1fr);
@@ -307,6 +302,19 @@ h3 {
 .project-group-header p {
   margin: 12px 0 0;
   color: var(--muted);
+}
+
+.project-more-link {
+  display: inline-flex;
+  margin-top: 16px;
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.project-more-link:hover {
+  text-decoration: underline;
 }
 
 .project-repos {
