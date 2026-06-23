@@ -276,6 +276,11 @@ h3 {
   padding: 20px;
 }
 
+.more-card {
+  border-style: dashed;
+  background: #f8fbf9;
+}
+
 .project-group {
   display: grid;
   grid-template-columns: minmax(220px, 0.38fr) minmax(0, 1fr);
