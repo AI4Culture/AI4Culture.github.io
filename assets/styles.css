@@ -219,12 +219,38 @@ h3 {
   max-width: none;
 }
 
-.about-grid {
+.about-panel {
+  max-width: 980px;
+}
+
+.about-lead {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.about-points {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.about-points > div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 20px;
+}
+
+.about-points h3 {
+  margin: 0;
+}
+
+.about-points p {
+  margin: 10px 0 0;
   color: var(--muted);
-  font-size: 1.04rem;
 }
 
 .info-strip {
@@ -484,7 +510,7 @@ h3 {
     padding-top: 52px;
   }
 
-  .about-grid,
+  .about-points,
   .topic-grid,
   .project-repos,
   .member-grid,
