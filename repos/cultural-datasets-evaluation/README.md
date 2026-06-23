@@ -4,4 +4,5 @@
 
 当前项目：
 
-- `dataset-resources/`：数据资源和测评说明入口。
+- [CulTi](https://github.com/AI4Culture/CulTi)：中国文化遗产跨模态检索数据集与 benchmark。
+- [DunhuangBench](https://github.com/AI4Culture/DunhuangBench)：面向多模态大模型敦煌艺术理解能力的 benchmark。
