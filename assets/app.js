@@ -67,6 +67,9 @@ const topicGrid = document.querySelector(".topic-grid");
 const memberGroups = document.querySelector("#member-groups");
 const publicationList = document.querySelector("#publication-list");
 const partnerGrid = document.querySelector("#partner-grid");
+const publicationPreviewCount = 10;
+let allPublications = [];
+let publicationsExpanded = false;
 
 const escapeHtml = (value) =>
   String(value ?? "")
@@ -169,23 +172,45 @@ const renderMembers = (items) => {
   `;
 };
 
+const publicationCard = (item) => `
+  <article class="publication-card">
+    <h3>
+      <a href="${escapeHtml(item.paper_url || "#")}" target="_blank" rel="noreferrer">
+        ${escapeHtml(item.title)}
+      </a>
+    </h3>
+    <p>${escapeHtml(item.authors)}</p>
+    <p>${escapeHtml(item.venue)}, ${escapeHtml(item.year)}</p>
+  </article>
+`;
+
 const renderPublications = (items) => {
-  publicationList.innerHTML = items
+  allPublications = items
     .sort((a, b) => (b.year ?? 0) - (a.year ?? 0) || (a.order ?? 0) - (b.order ?? 0))
-    .map(
-      (item) => `
-        <article class="publication-card">
-          <h3>
-            <a href="${escapeHtml(item.paper_url || "#")}" target="_blank" rel="noreferrer">
-              ${escapeHtml(item.title)}
-            </a>
-          </h3>
-          <p>${escapeHtml(item.authors)}</p>
-          <p>${escapeHtml(item.venue)}, ${escapeHtml(item.year)}</p>
-        </article>
-      `
-    )
-    .join("");
+    .slice();
+  renderPublicationList();
+};
+
+const renderPublicationList = () => {
+  const visiblePublications = publicationsExpanded
+    ? allPublications
+    : allPublications.slice(0, publicationPreviewCount);
+
+  publicationList.innerHTML = `
+    ${visiblePublications.map(publicationCard).join("")}
+    ${
+      allPublications.length > publicationPreviewCount
+        ? `<button class="publication-toggle" type="button">
+            ${publicationsExpanded ? "收起" : `显示全部 ${allPublications.length} 篇`}
+          </button>`
+        : ""
+    }
+  `;
+
+  publicationList.querySelector(".publication-toggle")?.addEventListener("click", () => {
+    publicationsExpanded = !publicationsExpanded;
+    renderPublicationList();
+  });
 };
 
 const renderPartners = (items) => {
