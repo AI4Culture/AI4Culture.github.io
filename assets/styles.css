@@ -244,10 +244,14 @@ h3 {
 }
 
 .topic-grid,
-.repo-grid,
 .partner-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.repo-grid {
+  display: grid;
   gap: 18px;
 }
 
@@ -278,6 +282,40 @@ h3 {
   min-height: 214px;
   flex-direction: column;
   padding: 20px;
+}
+
+.project-group {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.38fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 18px;
+}
+
+.project-group-header {
+  min-width: 0;
+  border-right: 1px solid var(--line);
+  padding-right: 18px;
+}
+
+.project-group-header h3,
+.repo-card h4 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.project-group-header p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.project-repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
 }
 
 .member-groups {
@@ -403,10 +441,21 @@ h3 {
 
   .about-grid,
   .topic-grid,
-  .repo-grid,
+  .project-repos,
   .member-grid,
   .partner-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-group {
+    grid-template-columns: 1fr;
+  }
+
+  .project-group-header {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding-right: 0;
+    padding-bottom: 16px;
   }
 
   .info-strip {
