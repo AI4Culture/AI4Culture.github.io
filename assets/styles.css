@@ -335,7 +335,7 @@ h3 {
   display: grid;
   grid-template-columns: 86px minmax(0, 1fr);
   gap: 16px;
-  align-items: center;
+  align-items: start;
 }
 
 .member-avatar {
