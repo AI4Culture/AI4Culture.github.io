@@ -4,10 +4,22 @@ const projectGroups = [
     description: "面向大模型训练、分布式计算、并发优化和可复现实验环境的工程项目。",
     repositories: [
       {
-        name: "ai4c-project-template",
-        description: "AI4C 项目模板，用于统一 README、环境配置、许可证、引用格式和维护规范。",
-        tags: ["template", "docs", "hpc"],
-        url: "repos/high-performance-computing/project-template/"
+        name: "AlignMalloc",
+        description: "CUDA 内存分配与对齐相关项目，归入高性能计算工程方向。",
+        tags: ["cuda", "memory", "hpc"],
+        url: "https://github.com/AI4Culture/AlignMalloc"
+      },
+      {
+        name: "SyncMalloc",
+        description: "CUDA 同步内存分配相关项目，面向并发与性能优化实验。",
+        tags: ["cuda", "sync", "hpc"],
+        url: "https://github.com/AI4Culture/SyncMalloc"
+      },
+      {
+        name: "One-waySync",
+        description: "C 语言同步机制相关项目，归入高性能计算与系统优化方向。",
+        tags: ["c", "sync", "systems"],
+        url: "https://github.com/AI4Culture/One-waySync"
       }
     ]
   },
@@ -16,10 +28,10 @@ const projectGroups = [
     description: "面向文化语义理解、多模态生成、智能创作和应用原型的研究代码入口。",
     repositories: [
       {
-        name: "cultural-intelligence-pipeline",
-        description: "文化智能相关的数据处理、模型训练、生成实验和可复现流程入口。",
-        tags: ["pipeline", "generation", "research"],
-        url: "repos/cultural-understanding-generation/analysis-pipeline/"
+        name: "HiGarment",
+        description: "跨模态 harmony-based diffusion 框架，用于从平面服装草图和文本提示生成真实服装图像。",
+        tags: ["diffusion", "generation", "ICCV 2025"],
+        url: "https://github.com/AI4Culture/HiGarment"
       }
     ]
   },
@@ -28,10 +40,16 @@ const projectGroups = [
     description: "面向文化数据集、元数据、评测基准、测试流程和引用规范的项目集合。",
     repositories: [
       {
-        name: "dataset-and-resources",
-        description: "数据说明、下载链接、预处理脚本、元数据、评测基准和数据使用规范的集中入口。",
-        tags: ["dataset", "benchmark", "metadata"],
-        url: "repos/cultural-datasets-evaluation/dataset-resources/"
+        name: "CulTi",
+        description: "面向中国文化遗产文档跨模态检索的数据集，包含图文对、协议与 benchmark 结果。",
+        tags: ["dataset", "retrieval", "heritage"],
+        url: "https://github.com/AI4Culture/CulTi"
+      },
+      {
+        name: "DunhuangBench",
+        description: "面向多模态大模型敦煌艺术理解能力的文化遗产 benchmark。",
+        tags: ["benchmark", "MLLM", "Dunhuang"],
+        url: "https://github.com/AI4Culture/DunhuangBench"
       }
     ]
   }
