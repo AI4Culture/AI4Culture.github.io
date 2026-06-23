@@ -1,6 +1,12 @@
 # 课题组仓库目录
 
-这个目录用于在 GitHub Pages 主页中组织项目入口。后续可以按真实项目创建子目录，或把这些入口替换为外部 GitHub 仓库链接。
+这个目录用于在 GitHub Pages 主页中组织项目入口。当前按三个方向管理项目：
+
+- `high-performance-computing/`：高性能计算。
+- `cultural-understanding-generation/`：文化理解生成。
+- `cultural-datasets-evaluation/`：文化数据集与测评。
+
+后续可以在每个方向下创建真实项目子目录，或把首页入口替换为外部 GitHub 仓库链接。
 
 建议每个项目至少包含：
 
@@ -9,4 +15,4 @@
 - `CITATION.cff`：论文或软件引用方式。
 - `environment.yml` / `requirements.txt` / `package.json`：可复现环境。
 
-如果项目已经是独立 GitHub 仓库，可以在主页的 `assets/app.js` 中把 `url` 改成对应仓库地址。
+如果项目已经是独立 GitHub 仓库，可以在主页的 `assets/app.js` 中把对应 `url` 改成仓库地址。
