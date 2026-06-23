@@ -99,6 +99,7 @@ repoGrid.innerHTML = projectGroups
         <div class="project-group-header">
           <h3>${escapeHtml(group.title)}</h3>
           <p>${escapeHtml(group.description)}</p>
+          <a class="project-more-link" href="${escapeHtml(group.moreUrl)}">More</a>
         </div>
         <div class="project-repos">
           ${group.repositories
@@ -115,11 +116,6 @@ repoGrid.innerHTML = projectGroups
               `
             )
             .join("")}
-          <article class="repo-card more-card">
-            <h4>更多项目</h4>
-            <p>查看该方向下的更多仓库、说明文档和后续新增项目。</p>
-            <a href="${escapeHtml(group.moreUrl)}">查看更多</a>
-          </article>
         </div>
       </section>
     `
