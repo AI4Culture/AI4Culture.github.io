@@ -198,30 +198,20 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.link,
-.map-node {
-  position: absolute;
-}
-
-.link {
-  z-index: 1;
-  height: 2px;
-  transform-origin: left center;
-  background: rgba(31, 122, 90, 0.34);
-}
-
 .click-map {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 26px;
   min-height: 520px;
+  padding: 44px;
 }
 
 .map-node {
-  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 118px;
-  min-height: 46px;
-  padding: 9px 14px;
+  min-height: 58px;
+  padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.94);
@@ -240,15 +230,14 @@ h3 {
 }
 
 .node-center {
-  top: 214px;
-  left: 50%;
   display: flex;
-  width: 156px;
-  height: 92px;
+  width: min(100%, 280px);
+  min-height: 110px;
   flex-direction: column;
-  margin-left: -78px;
+  justify-self: center;
   background: var(--green);
   color: #ffffff;
+  font-size: 1.3rem;
 }
 
 .node-center small {
@@ -256,74 +245,11 @@ h3 {
   font-size: 0.75rem;
 }
 
-.node-about {
-  top: 68px;
-  left: 10%;
-}
-
-.node-research {
-  top: 76px;
-  right: 10%;
-}
-
-.node-members {
-  top: 226px;
-  left: 7%;
-}
-
-.node-publications {
-  top: 226px;
-  right: 7%;
-}
-
-.node-partners {
-  bottom: 68px;
-  left: 13%;
-}
-
-.node-repos {
-  right: 13%;
-  bottom: 68px;
-}
-
-.link-about {
-  top: 192px;
-  left: 25%;
-  width: 28%;
-  transform: rotate(41deg);
-}
-
-.link-research {
-  top: 194px;
-  left: 50%;
-  width: 29%;
-  transform: rotate(-38deg);
-}
-
-.link-members {
-  top: 260px;
-  left: 22%;
-  width: 28%;
-}
-
-.link-publications {
-  top: 260px;
-  left: 50%;
-  width: 29%;
-}
-
-.link-partners {
-  bottom: 160px;
-  left: 24%;
-  width: 30%;
-  transform: rotate(-39deg);
-}
-
-.link-repos {
-  right: 24%;
-  bottom: 160px;
-  width: 31%;
-  transform: rotate(39deg);
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-self: center;
 }
 
 .section {
@@ -532,34 +458,22 @@ h3 {
   }
 
   .click-map {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: 18px;
     min-height: auto;
     padding: 18px;
   }
 
-  .click-map .link {
-    display: none;
-  }
-
   .map-node,
-  .node-center,
-  .node-about,
-  .node-research,
-  .node-members,
-  .node-publications,
-  .node-partners,
-  .node-repos {
-    position: static;
-    width: auto;
-    height: auto;
+  .node-center {
     min-height: 58px;
-    margin: 0;
   }
 
   .node-center {
-    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .map-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .about-grid,
@@ -597,6 +511,10 @@ h3 {
 
   .network-panel {
     min-height: 300px;
+  }
+
+  .map-grid {
+    grid-template-columns: 1fr;
   }
 
   .map-node {
