@@ -2,6 +2,7 @@ const projectGroups = [
   {
     title: "高性能计算",
     description: "面向大模型训练、分布式计算、并发优化和可复现实验环境的工程项目。",
+    moreUrl: "repos/high-performance-computing/",
     repositories: [
       {
         name: "AlignMalloc",
@@ -26,6 +27,7 @@ const projectGroups = [
   {
     title: "文化理解生成",
     description: "面向文化语义理解、多模态生成、智能创作和应用原型的研究代码入口。",
+    moreUrl: "repos/cultural-understanding-generation/",
     repositories: [
       {
         name: "HiGarment",
@@ -38,6 +40,7 @@ const projectGroups = [
   {
     title: "文化数据集与测评",
     description: "面向文化数据集、元数据、评测基准、测试流程和引用规范的项目集合。",
+    moreUrl: "repos/cultural-datasets-evaluation/",
     repositories: [
       {
         name: "CulTi",
@@ -112,6 +115,11 @@ repoGrid.innerHTML = projectGroups
               `
             )
             .join("")}
+          <article class="repo-card more-card">
+            <h4>更多项目</h4>
+            <p>查看该方向下的更多仓库、说明文档和后续新增项目。</p>
+            <a href="${escapeHtml(group.moreUrl)}">查看更多</a>
+          </article>
         </div>
       </section>
     `
