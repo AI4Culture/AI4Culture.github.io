@@ -4,4 +4,6 @@
 
 当前项目：
 
-- `project-template/`：AI4C 项目模板与维护规范。
+- [AlignMalloc](https://github.com/AI4Culture/AlignMalloc)：CUDA 内存分配与对齐相关项目。
+- [SyncMalloc](https://github.com/AI4Culture/SyncMalloc)：CUDA 同步内存分配相关项目。
+- [One-waySync](https://github.com/AI4Culture/One-waySync)：C 语言同步机制相关项目。
