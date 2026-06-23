@@ -419,6 +419,33 @@ h3 {
   font-size: 0.92rem;
 }
 
+.back-to-top {
+  position: fixed;
+  right: max(22px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  z-index: 30;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(216, 223, 216, 0.95);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--green-dark);
+  cursor: pointer;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(31, 41, 51, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.back-to-top:hover {
+  background: var(--green);
+  color: #ffffff;
+}
+
 @media (max-width: 920px) {
   .site-header {
     align-items: flex-start;
@@ -485,5 +512,12 @@ h3 {
 
   .campus-figure {
     aspect-ratio: 16 / 10;
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
   }
 }
