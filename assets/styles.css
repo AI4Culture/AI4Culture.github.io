@@ -358,6 +358,24 @@ h3 {
   gap: 16px;
 }
 
+.publication-toggle {
+  justify-self: center;
+  min-height: 42px;
+  padding: 9px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--green-dark);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.publication-toggle:hover {
+  border-color: rgba(31, 122, 90, 0.42);
+  background: #edf6f2;
+}
+
 .publication-card h3 a,
 .partner-card a {
   color: var(--blue);
