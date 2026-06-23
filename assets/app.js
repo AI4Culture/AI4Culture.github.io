@@ -79,6 +79,8 @@ const escapeHtml = (value) =>
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 
+const secureUrl = (value) => String(value ?? "").replace(/^http:\/\/ai4c\.net/i, "https://ai4c.net");
+
 const loadJson = async (url) => {
   const response = await fetch(url);
   if (!response.ok) {
@@ -147,6 +149,24 @@ const renderMembers = (items) => {
     </article>
   `;
 
+  const facultyCard = (member) => `
+    <article class="member-card faculty-card">
+      <div class="member-avatar">
+        ${
+          member.avatar
+            ? `<img src="${escapeHtml(secureUrl(member.avatar))}" alt="${escapeHtml(member.name)}" loading="lazy" />`
+            : `<span>${escapeHtml(member.name?.slice(0, 1) || "")}</span>`
+        }
+      </div>
+      <div class="member-info">
+        <h4>${escapeHtml(member.name)}</h4>
+        <p>${escapeHtml(member.title || member.role_display)}</p>
+        <p>${escapeHtml(member.specialty || "")}</p>
+        <p>${escapeHtml(member.email || "")}</p>
+      </div>
+    </article>
+  `;
+
   const alumniCard = (member) => `
     <article class="member-card">
       <h4>${escapeHtml(member.name)}</h4>
@@ -159,7 +179,7 @@ const renderMembers = (items) => {
   memberGroups.innerHTML = `
     <div class="member-group">
       <h3>教师团队</h3>
-      <div class="member-grid">${faculty.map(memberCard).join("")}</div>
+      <div class="member-grid faculty-grid">${faculty.map(facultyCard).join("")}</div>
     </div>
     <div class="member-group">
       <h3>学生团队</h3>
