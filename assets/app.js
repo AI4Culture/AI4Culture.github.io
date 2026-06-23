@@ -1,21 +1,39 @@
-const repositories = [
+const projectGroups = [
   {
-    name: "ai4c-project-template",
-    description: "AI4C 项目模板，用于统一 README、环境配置、许可证、引用格式和维护规范。",
-    tags: ["template", "docs", "ai4c"],
-    url: "repos/project-template/"
+    title: "高性能计算",
+    description: "面向大模型训练、分布式计算、并发优化和可复现实验环境的工程项目。",
+    repositories: [
+      {
+        name: "ai4c-project-template",
+        description: "AI4C 项目模板，用于统一 README、环境配置、许可证、引用格式和维护规范。",
+        tags: ["template", "docs", "hpc"],
+        url: "repos/high-performance-computing/project-template/"
+      }
+    ]
   },
   {
-    name: "cultural-intelligence-pipeline",
-    description: "文化智能相关的数据处理、模型训练、评测和可复现实验流程入口。",
-    tags: ["pipeline", "research"],
-    url: "repos/analysis-pipeline/"
+    title: "文化理解生成",
+    description: "面向文化语义理解、多模态生成、智能创作和应用原型的研究代码入口。",
+    repositories: [
+      {
+        name: "cultural-intelligence-pipeline",
+        description: "文化智能相关的数据处理、模型训练、生成实验和可复现流程入口。",
+        tags: ["pipeline", "generation", "research"],
+        url: "repos/cultural-understanding-generation/analysis-pipeline/"
+      }
+    ]
   },
   {
-    name: "dataset-and-resources",
-    description: "数据说明、下载链接、预处理脚本、元数据和数据使用规范的集中入口。",
-    tags: ["dataset", "metadata"],
-    url: "repos/dataset-resources/"
+    title: "文化数据集与测评",
+    description: "面向文化数据集、元数据、评测基准、测试流程和引用规范的项目集合。",
+    repositories: [
+      {
+        name: "dataset-and-resources",
+        description: "数据说明、下载链接、预处理脚本、元数据、评测基准和数据使用规范的集中入口。",
+        tags: ["dataset", "benchmark", "metadata"],
+        url: "repos/cultural-datasets-evaluation/dataset-resources/"
+      }
+    ]
   }
 ];
 
@@ -48,17 +66,31 @@ const loadJson = async (url) => {
   return response.json();
 };
 
-repoGrid.innerHTML = repositories
+repoGrid.innerHTML = projectGroups
   .map(
-    (repo) => `
-      <article class="repo-card">
-        <h3>${repo.name}</h3>
-        <p>${repo.description}</p>
-        <div class="repo-meta">
-          ${repo.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+    (group) => `
+      <section class="project-group">
+        <div class="project-group-header">
+          <h3>${escapeHtml(group.title)}</h3>
+          <p>${escapeHtml(group.description)}</p>
         </div>
-        <a href="${repo.url}">打开仓库</a>
-      </article>
+        <div class="project-repos">
+          ${group.repositories
+            .map(
+              (repo) => `
+                <article class="repo-card">
+                  <h4>${escapeHtml(repo.name)}</h4>
+                  <p>${escapeHtml(repo.description)}</p>
+                  <div class="repo-meta">
+                    ${repo.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
+                  </div>
+                  <a href="${escapeHtml(repo.url)}">打开仓库</a>
+                </article>
+              `
+            )
+            .join("")}
+        </div>
+      </section>
     `
   )
   .join("");
