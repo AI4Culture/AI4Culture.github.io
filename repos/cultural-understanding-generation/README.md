@@ -4,4 +4,4 @@
 
 当前项目：
 
-- `analysis-pipeline/`：文化智能实验流程入口。
+- [HiGarment](https://github.com/AI4Culture/HiGarment)：跨模态 diffusion 框架，用于从平面服装草图和文本提示生成真实服装图像。
