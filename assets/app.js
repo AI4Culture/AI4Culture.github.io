@@ -137,7 +137,12 @@ const renderResearch = (items) => {
 };
 
 const renderMembers = (items) => {
-  const facultyRoles = ["head", "professor", "associate_professor"];
+  const facultyRoles = [
+    "head",
+    "professor",
+    "associate_professor",
+    "assistant_professor",
+  ];
   const faculty = items.filter((item) => facultyRoles.includes(item.role));
   const students = items.filter((item) =>
     ["phd", "master", "undergraduate", "postdoctoral"].includes(item.role)
